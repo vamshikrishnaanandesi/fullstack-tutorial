@@ -7,8 +7,8 @@ class LaunchAPI extends RESTDataSource {
   }
 
   async getAllLaunches() {
-      const response = await this.get('launches');
-      return Array.isArray(response)
+    const response = await this.get('launches');
+    return Array.isArray(response)
       ? response.map(launch => this.launchReducer(launch))
       : [];
   }
